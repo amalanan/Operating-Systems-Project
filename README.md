@@ -1,177 +1,170 @@
-# Operating-Systems-Project
-myshell — Operating Systems Project 1
+# myshell — Operating Systems Project 1
 
-Authors:  
-- Aseel Khalil Omar Hodhod (220200323)  
-- Amal Yasser Farouq Anan (220201122)  
-- Dalia Jamal Taher Abu Sharekh (220200747)  
+## Authors
+- **Aseel Khalil Omar Hodhod** (220200323)  
+- **Amal Yasser Farouq Anan** (220201122)  
+- **Dalia Jamal Taher Abu Sharekh** (220200747)
 
----
+## Overview
 
-Overview
+**myshell** is a simple command-line shell implemented in C, designed to run on **Ubuntu Linux**. It supports:
 
-myshell is a simple command-line shell implemented in C, designed to run on Ubuntu Linux. It supports built-in commands, batch file execution, input/output redirection, and background execution.
-
----
-
-Supported Internal Commands
-
-Command   : Description
---------- : ------------------------------------------
-cd        : Change current directory
-pwd       : Print working directory
-clr       : Clear the terminal screen
-dir       : List contents of a directory
-environ   : List environment variables
-echo      : Display a message
-help      : Display help information
-pause     : Pause shell execution until keypress
-quit      : Exit the shell
-myshell   : Execute commands from a batch file
+- Built-in internal commands  
+- Batch file execution  
+- Input/Output redirection  
+- Background command execution
 
 ---
 
-Installation and Compilation on Ubuntu
+## Supported Internal Commands
 
-1. Install GCC (if not installed):
-
-sudo apt update
-sudo apt install build-essential
-
-2. Compile myshell:
-
-gcc -o myshell myshell.c
-
-(Replace myshell.c with your main C source file or files as necessary)
+| Command   | Description                             |
+|-----------|-----------------------------------------|
+| `cd`      | Change current directory                |
+| `pwd`     | Print current working directory         |
+| `clr`     | Clear the terminal screen               |
+| `dir`     | List contents of a directory            |
+| `environ` | List environment variables              |
+| `echo`    | Display a message                       |
+| `help`    | Display help information                |
+| `pause`   | Pause shell execution until keypress    |
+| `quit`    | Exit the shell                          |
+| `myshell` | Execute commands from a batch file      |
 
 ---
 
+## Installation & Compilation on Ubuntu
+
+1. **Install GCC (if not already installed):**
+   ```bash
+   sudo apt update
+   sudo apt install build-essential
+
+2.Compile myshell:
+
+bash
+Copy
+Edit
+gcc -o myshell myshell.c utility.c
 Usage
+Interactive mode:
 
-- Run myshell interactively:
-
+bash
+Copy
+Edit
 ./myshell
+Batch mode:
 
-- Run batch files:
-
+bash
+Copy
+Edit
 ./myshell test.bat
-
----
-
 Getting Help
+Type help or ? to display the full user manual.
 
-- Type help or ? to display the user manual.
-- To get detailed info about a specific command:
+For specific command help:
 
+bash
+Copy
+Edit
 help <command>
+Examples:
 
-Example:
-
+bash
+Copy
+Edit
 help cd
 help dir
 help redirection
-
----
-
 Batch File Support
+You can run commands non-interactively by passing a batch file:
 
-- Launch myshell with a batch file to run commands non-interactively.
-- Shell exits when batch file commands finish.
-
----
+bash
+Copy
+Edit
+./myshell batchfile.txt
+The shell will exit automatically after finishing all commands in the batch file.
 
 Input/Output Redirection
+Use redirection symbols to route input/output:
 
-Use <, >, and >> for redirecting input/output.
+< — Redirect standard input from a file
 
-Operator : Description
----------: ----------------------------------
-<        : Redirect standard input from file
->        : Redirect standard output (overwrite)
->>       : Redirect standard output (append)
+> — Redirect standard output (overwrite)
+
+>> — Redirect standard output (append)
 
 Example:
 
+bash
+Copy
+Edit
 program arg1 < input.txt > output.txt
+Commands that support redirection:
 
-Supported redirection commands:
-- Input redirection: cd, dir, echo
-- Output redirection: pwd, dir, environ, echo, help
+Input: cd, dir, echo
 
----
+Output: pwd, dir, environ, echo, help
 
 Background Execution
+To run a command in the background, append &:
 
-Run a command in the background by appending &:
-
+bash
+Copy
+Edit
 long_running_command &
-
-The shell will accept new commands immediately.
-
----
+This allows the shell to accept new commands while the background task runs.
 
 Detailed Command Descriptions
-
 cd
+Change the current working directory.
+Supports input redirection.
 
-Change the current directory or display it if no argument is given. Supports input redirection.
-
+bash
+Copy
+Edit
 cd /home/user
 cd < directory.txt
-
----
-
 clr or clear
-
-Clear the terminal screen.
-
----
+Clears the terminal screen.
 
 dir
+Lists contents of a directory.
+Supports input/output redirection.
 
-List directory contents. Supports input/output redirection.
-
+bash
+Copy
+Edit
 dir /home/user > listing.txt
 dir < input.txt > output.txt
-
----
-
 environ
-
-List environment variables. Supports output redirection.
-
----
+Lists all environment variables.
+Supports output redirection.
 
 echo
-
-Display messages. Supports input/output redirection.
-
----
+Displays a message.
+Supports input/output redirection.
 
 help
-
-Show the user manual or detailed help for commands. Supports output redirection.
-
----
+Shows user manual or command-specific help.
+Supports output redirection.
 
 pause
-
-Pause execution until Enter key is pressed.
-
----
+Pauses execution until the Enter key is pressed.
 
 quit
-
-Exit the shell.
-
----
+Exits the shell.
 
 File and Directory Paths
+Supports both relative and absolute paths
 
-- Supports relative and absolute paths.
-- Special symbols supported:
-  ..  — parent directory
-  .   — current directory
-  ~   — home directory
----
+Special symbols:
+
+.. — parent directory
+
+. — current directory
+
+~ — home directory
+
+
 thanks
