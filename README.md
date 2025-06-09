@@ -1,4 +1,4 @@
-# myshell — Operating Systems Project 1
+# myshell — Operating Systems Project 
 
 ## Authors
 - **Aseel Khalil Omar Hodhod** (220200323)  
