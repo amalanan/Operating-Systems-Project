@@ -203,4 +203,3 @@ echo < file\ name.txt
 
 ---
 
-Let me know if you'd like to export this as a `.md` file or generate a PDF!
